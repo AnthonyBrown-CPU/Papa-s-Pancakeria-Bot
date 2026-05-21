@@ -2,6 +2,21 @@
 
 A Python bot that plays [Papa's Pancakeria](https://www.coolmathgames.com/0-papas-pancakeria) automatically. It reads the game state by computing pixel sums of screen regions and drives the game via simulated mouse and keyboard input.
 
+[![Bot playing Papa's Pancakeria](https://img.youtube.com/vi/tgEf2_qM-M4/0.jpg)](https://www.youtube.com/watch?v=tgEf2_qM-M4)
+
+## Background
+
+This project started after following a tutorial that built a similar bot for Sushi Go Round, another Flash cooking game. Papa's Pancakeria was a natural next target.
+
+Over the years it became a recurring project — something to return to whenever there were new things to apply. Each pass left the code noticeably better than the last:
+
+- Early versions used raw lists to represent orders and had all station logic mixed together
+- Station logic was separated into dedicated classes (`OrderStation`, `GrillStation`, `BuildStation`, `DrinkStation`)
+- Raw order lists were replaced with proper dataclasses (`Order`, `Drink`, `Topping`)
+- A priority-based game loop was added so the bot always attends to the grill first, preventing burnt pancakes and failed orders
+
+The end result is less a finished product and more a snapshot of accumulated learning.
+
 ## How It Works
 
 ### Screen detection
